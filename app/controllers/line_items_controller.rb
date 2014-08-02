@@ -1,4 +1,7 @@
 class LineItemsController < ApplicationController
+  # Find (or create) a cart in the session
+  include CurrentCart
+  before_action :set_cart, only: [:create] # set_cart() method is involved before create() action is allowed
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
