@@ -2,7 +2,9 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
+<% if session[:counter] >= 5 %>
 <p>You have accessed the catalog <%= pluralize session[:counter], 'time' %></p>
+<% end %>
 
 <h1>Your Pragmatic Catalog</h1>
   <% cache ['store', Product.latest] do %>
