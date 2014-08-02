@@ -14,6 +14,8 @@
           <!-- sanitize() method allows us to safely add HTML stylings to make descriptions more interesting; potential security hole -->
           <div class="price_line">
             <span class="price"><%= number_to_currency(product.price) %> </span>
+            <!-- We have to pass the ID of the product corresponding to the button so that line_items_path knows WHICH PRODUCT to add to cart -->
+            <%= button_to 'Add to cart', line_items_path(product_id: product) %>
           </div>
         </div>
       <% end %>
