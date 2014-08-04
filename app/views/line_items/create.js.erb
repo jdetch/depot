@@ -1,0 +1,3 @@
+// Tells the browser to replace the content of the element whose id='cart' with that HTML
+// escape_javascript() is a helper method that converts the Ruby string into a format acceptable as input to JavaScript
+$('#cart').html("<%= escape_javascript render(@cart) %>");
