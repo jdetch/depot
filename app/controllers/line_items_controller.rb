@@ -33,7 +33,7 @@ class LineItemsController < ApplicationController
     respond_to do |format|
       if @line_item.save
         session[:counter] = 0
-        format.html { redirect_to @line_item.cart } # redirects back to CART instead of line item
+        format.html { redirect_to store_url }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
